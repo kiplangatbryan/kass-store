@@ -1,0 +1,56 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="wrapper">
+   <%- include('../partials/dash-nav.ejs') %>
+   <div class="main-body">
+      <div class="log-box">
+         <form action="/update" method="post" autocomplete="on">
+            <legend>Change Account</legend>
+            <div class="push-msg">
+               <% if(errors) { %>
+               <div class="report" data-msg="false">
+                  <%= errors %>
+               </div>
+               <% } %> <% if(success) { %>
+               <div class="report" data-msg="true">
+                  <%= success %>
+               </div>
+               <% } %>
+            </div>
+            <script>
+               console.log(errors)
+            </script>
+            <div class="label">Old password</div>
+            <div class="text-input">
+               <i class="fa fa-lock" class="mag"></i>
+               <input
+                  data-input
+                  class="tusk"
+                  type="password"
+                  placeholder="Your Old pascode"
+                  name="oldpass"
+                  id="oldpasswd"
+               />
+            </div>
+            <div class="label">New Password</div>
+            <div class="text-input">
+               <i class="fa fa-lock" class="mag"></i>
+               <input
+                  data-input
+                  class="tusk"
+                  type="password"
+                  placeholder="Password"
+                  name="passwd"
+                  id="passwd"
+               />
+            </div>
+            <fieldset>
+               <button type="submit" id="update" class="submit">
+                  Save Credentials
+               </button>
+            </fieldset>
+         </form>
+      </div>
+   </div>
+</div>
+<%- include('../partials/footer.ejs') %>

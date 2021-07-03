@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../post/user/master.min.css" />
+      <link rel="stylesheet" href="../css/all.min.css" />
+      <title>
+         <%= pageTitle %>
+      </title>
+   </head>
+
+   <body>
+      <div class="sidenav">
+         <h2>KassCart</h2>
+
+         <div class="instruct">
+            <div class="divider-fn">General</div>
+            <a
+               href="/admin/dashboard"
+               class="<%= path=== '/admin/dashboard'? 'active': ''%>"
+            >
+               <span class="box"> <i class="fas fa-chart-area"></i></span>
+               <span class="name">
+                  Dashboard
+               </span>
+            </a>
+            <a
+               href="/admin/users"
+               class="<%= path=== '/admin/users'? 'active': ''%>"
+            >
+               <span class="box"> <i class="fa fa-lock"></i></span>
+               <span class="name">
+                  Authentication
+               </span>
+            </a>
+            <a
+               href="/admin/add-product"
+               class="<%= path=== '/admin/add-product'? 'active': ''%>"
+            >
+               <span class="box"> <i class="fas fa-folder"></i></span>
+               <span class="name">
+                  Add-product
+               </span>
+            </a>
+
+            <a
+               href="/admin/settings"
+               class="<%= path=== '/admin/settings'? 'active': ''%>"
+            >
+               <span class="box"> <i class="fa fa-cog"></i></span>
+               <span class="name">
+                  Settings
+               </span>
+            </a>
+
+            <a href="/admin/logout">
+               <span class="box"> <i class="fa fa-sign-out-alt"></i></span>
+               <span class="name">
+                  log out
+               </span>
+            </a>
+         </div>
+         <div class="back">
+            <i class="fa fa-angle-right"></i>
+         </div>
+      </div>
+
+      <div class="main-section">
+         <div class="nav-section">
+            <div class="search-bar">
+               <input type="text" placeholder="search here" id="search" />
+               <button class="search-btn">
+                  <i class="fa fa-search"></i>
+               </button>
+            </div>
+            <div class="status">
+               <div class="notify">
+                  <a href=""><i class="fas fa-bell"></i></a>
+                  <a href=""> <i class="fas fa-envelope"></i></a>
+               </div>
+               <div class="status-user">
+                  <span class="user">
+                     <%= user %>
+                  </span>
+                  <div class="ride">
+                     <i class="fa fa-user"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="main-content">

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/post/user/main.min.css" />
+      <link rel="stylesheet" href="/post/user/dash.min.css" />
+      <link rel="stylesheet" href="./css/all.min.css" />
+      <script src="JS/jquerymlib3.1.4.js"></script>
+      <link rel="stylesheet" href="" />
+      <title>
+         <%=pageTitle %>
+      </title>
+   </head>
+   <body>
+      <header class="header">
+         <div class="menuBar">
+            <h1>KassCart</h1>
+            <div class="nav-Bar">
+               <a class="a-tag" href="/cart">
+                  <i class="fa fa-shopping-cart"></i>
+               </a>
+               <a class="a-tag" href="/contact-us">
+                  Contact
+               </a>
+
+               <% if(!isAuthentificated){ %>
+               <a class="a-tag" href="/login">
+                  Sign in
+               </a>
+               <a href="/register" class="a-tag sign-btn">
+                  Sign Up
+               </a>
+               <% }else {%>
+               <div class="dropdown" id="activate">
+                  <a href="#" class="a-tag user-select">
+                     <span>Hi <%= user.title %></span>
+                     <i id="drop-indicator" class="fa fa-angle-down"></i>
+                  </a>
+                  <div class="smenu">
+                     <a class="a-tag tag" href="/dashboard">dashboard</a>
+                     <a class="a-tag tag" href="/logout">log out</a>
+                  </div>
+               </div>
+               <% } %>
+            </div>
+         </div>
+         <% if(!path === '/cart') { %>
+         <div class="banner">
+            <h1>Cart is Here</h1>
+         </div>
+         <% } %>
+      </header>
+   </body>
+</html>
+
+

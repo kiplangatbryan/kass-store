@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../post/user/auth.min.css" />
+      <link rel="stylesheet" href="../css/all.min.css" />
+      <title>
+         <%= pageTitle %>
+      </title>
+   </head>
+   <body>
+      <div class="container">
+         <div class="log-box">
+            <form action="/admin/login" method="post" autocomplete="on">
+               <legend>Administator Access</legend>
+               <div class="label">Email</div>
+               <div class="text-input">
+                  <i class="fa fa-envelope" class="mag"></i>
+                  <input
+                     class="tusk"
+                     type="email"
+                     placeholder="Your Work Email"
+                     name="email"
+                  />
+               </div>
+               <div class="label">Password</div>
+               <div class="text-input">
+                  <i class="fa fa-lock" class="mag"></i>
+                  <input
+                     type="password"
+                     placeholder="Password"
+                     name="passwd"
+                     class="tusk"
+                  />
+               </div>
+               <fieldset>
+                  <button type="submit" class="submit">
+                     Proceed
+                  </button>
+               </fieldset>
+               <!-- <div class="finals">
+                    <a href="/resetPass">Forgot Password</a>
+                    <a href="/register">Create Account</a>
+                </div> -->
+            </form>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+
+        <div class="wrapper">
+            <%- include('../partials/dash-nav.ejs') %>
+            <div class="main-body">
+                <div class="modal">
+                    <div class="head">
+                        <div> Account Information</div>
+                        <div class="toque"><i class="fa fa-edit"></i></div>
+                    </div>
+                    <div class="body">
+                        <p> <em><%= user.title %></em</p>
+                        <br>
+                       <p><%= user.email %></p>
+                    </div>
+                </div>
+
+                <div class="modal">
+                    <div class="head">
+                        <div> Shipping Address</div>
+                        <div class="toque"><i class="fa fa-edit"></i></div>
+                    </div>
+                    <div class="body">
+                        Empty
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<%- include('../partials/footer.ejs') %>

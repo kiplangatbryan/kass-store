@@ -1,0 +1,15 @@
+// compiling Es6/7 JS
+babelrc file -->
+
+{
+"presets": ["es2015"] 
+}
+package.json file -- >
+{
+ ...
+"scripts": {
+ ... ,
+"build": "babel scripts --out-dir dist/scripts"
+},
+ ...
+}

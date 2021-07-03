@@ -1,0 +1,92 @@
+<%- include("../partials/admin.ejs") %>
+
+
+   <div class="headText">
+      <h1>Manage System Wide Users</h1>
+   </div>
+   <div class="manage">
+        <button class="btn" id="add-user">
+           <span>+</span> New User
+        </button>
+   </div>
+   <div class="add-modal">
+      <div class="data">
+         <div class="header">
+            <span>users</span> 
+            <div class="close-btn" id="shot">
+               -
+            </div>
+         </div>
+ <div class="data-box">
+   <form method="POST" action="/admin/add-user">
+      <div class="label">Username</div>
+      <div class="text-input">
+         <i class="fa fa-lock" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="text"
+            placeholder="Your name"
+            name="uname"
+            id="oldpasswd"
+         />
+      </div>
+      <div class="label">Email</div>
+      <div class="text-input">
+         <i class="fa fa-lock" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="email"
+            placeholder="Password"
+            name="mail"
+            id="passwd"
+         />
+      </div>
+      <div class="label">password</div>
+      <div class="text-input">
+         <i class="fa fa-lock" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="password"
+            placeholder="Password"
+            name="passwd"
+            id="passwd"
+         />
+      </div>
+      <fieldset>
+         <button type="submit" id="update" class="submit">
+            Save Credentials
+         </button>
+      </fieldset>
+   </form>
+ </div>
+      </div>
+   </div>
+   <table class="table">
+      <tr>
+         <th>Ids</th>
+         <th>Email</th>
+         <th>Date Created</th>
+         <th>Last Login</th>
+         <th>Manage</th>
+      </tr>
+      <% for(const user of users){ %>
+      <tr>
+         <td style="color: #8b8989;"><%= user.uid %></td>
+         <td><%= user.email %></td>
+         <td><%= new Date(user.created).toLocaleDateString() %></td>
+         <td><%= new Date(user.lastlg).toLocaleDateString() %></td>
+         <td>
+            <button class="user_del"><i class="fa fa-trash"></i> remove</button>
+         </td>
+      </tr>
+      <% } %>
+   </table>
+</div>
+
+
+<%- include("../partials/admin-foot.ejs") %>
+
+

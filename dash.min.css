@@ -1,0 +1,230 @@
+.wrapper {
+  padding: 5rem 4rem;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 200px auto;
+  background: #eee;
+  min-height: 90vh;
+}
+
+.wrapper .nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper .nav-bar .alias {
+  padding: 0.5rem 1rem;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #5c5c5c;
+  display: block;
+  border-bottom: none;
+  text-align: left;
+  color: #5c5c5c;
+  background: none;
+  cursor: pointer;
+  border-bottom: 1px solid #dddd;
+  transition: background 0.4s;
+  position: relative;
+}
+
+.wrapper .nav-bar .alias:hover {
+  background: #fff;
+}
+
+.wrapper .nav-bar .alias .icon {
+  margin-right: 10px;
+}
+
+.wrapper .nav-bar .active {
+  background: #fff;
+}
+
+.wrapper .nav-bar .active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  background: #06665e;
+  bottom: 0;
+}
+
+.wrapper .nav-bar .top-nav {
+  margin-bottom: 3rem;
+}
+
+.wrapper .main-body {
+  grid-column: 2;
+  grid-row: 1/3;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper .main-body .log-box {
+  width: 350px;
+  padding: 0 1rem;
+}
+
+.wrapper .main-body .log-box form .report {
+  padding: 1rem 2rem;
+  font-size: 13px;
+  font-weight: bold;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+.wrapper .main-body .log-box form .report[data-msg="true"] {
+  background: #8c4c;
+  color: #eee;
+}
+
+.wrapper .main-body .log-box form .report[data-msg="false"] {
+  background: #864c4c;
+  color: #eee;
+}
+
+.wrapper .main-body .log-box form fieldset {
+  border: none;
+}
+
+.wrapper .main-body .log-box form fieldset .submit {
+  border: none;
+  background: #4e73df;
+  border-radius: 4px;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.wrapper .main-body .log-box form legend {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  font-size: 18px;
+  color: #5c5c5c;
+  border-bottom: 1px solid #7a7979;
+}
+
+.wrapper .main-body .log-box form .label {
+  margin-bottom: 0.5rem;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.wrapper .main-body .log-box form .text-input {
+  position: relative;
+  display: grid;
+  grid-template-columns: 30px auto;
+  text-align: center;
+  padding: 6px 0;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.wrapper .main-body .log-box form .text-input i {
+  color: #9e9e9e;
+}
+
+.wrapper .main-body .log-box form .text-input .tusk {
+  border: none;
+  background: transparent;
+  transition: box-shadow 0.3s;
+}
+
+.wrapper .main-body .log-box form .focused {
+  border: 1px solid #0060df;
+  box-shadow: 0 0 0 1px #0060df, 0 0 0 4px #0060df4d;
+}
+
+.wrapper .main-body .load {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrapper .main-body .load span {
+  margin-right: 3px;
+  height: 40px;
+  width: 5px;
+  background: #ffb834;
+  border-radius: 3px;
+  animation: load 0.7s infinite ease-in;
+}
+
+.wrapper .main-body .load span:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+.wrapper .main-body .load span:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+.wrapper .main-body .load span:nth-of-type(4) {
+  animation-delay: 0.3s;
+}
+
+.wrapper .main-body .load span:nth-of-type(6) {
+  animation-delay: 0.4s;
+}
+
+.wrapper .main-body .modal {
+  border-radius: 3px;
+  box-shadow: 0 0 10px #0000004d;
+  width: 250px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.wrapper .main-body .modal .head {
+  height: 7vh;
+  display: flex;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  align-items: center;
+  background: #e9e5e5;
+  font-size: 13px;
+  justify-content: space-between;
+  color: #69c51e;
+}
+
+.wrapper .main-body .modal .head .toque {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  color: #ffb834;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #f1eaea;
+}
+
+.wrapper .main-body .modal .body {
+  display: flex;
+  padding: 0 2rem;
+  color: #999;
+  align-items: center;
+  background: #fff;
+}
+
+.wrapper .main-body .modal .body div {
+  display: block;
+}
+
+@keyframes load {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}

@@ -1,0 +1,46 @@
+<%-include("../partials/auth.ejs") %>
+      <div class="container">
+         <div class="log-box">
+            <form action="/auth" method="post" autocomplete="on">
+               <legend>KassCart</legend>
+               <p class="spark">Login</p>
+         
+               <div class="label">Email</div>
+               <div class="text-input">
+                  <i class="fa fa-envelope" class="mag"></i>
+                  <input
+                     class="tusk"
+                     type="email"
+                     placeholder="Your Work Email"
+                     name="email"
+                  />
+               </div>
+               <div class="label">Password</div>
+               <div class="text-input">
+                  <i class="fa fa-lock" class="mag"></i>
+                  <input
+                     type="password"
+                     placeholder="Password"
+                     name="passwd"
+                     class="tusk"
+                  />
+               </div>
+               <fieldset>
+                  <button type="submit" class="submit">
+                     login
+                  </button>
+               </fieldset>
+
+               <div class="finals">
+                  <a href="/resetPass">Forgot Password</a>
+               </div>
+
+               <div class="fallback">
+                  <a href="/register">Create an account</a>
+                </div>
+            </form>
+         </div>
+      </div>
+      <script src="/JS/main.js"></script>
+   </body>
+</html>

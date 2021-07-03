@@ -1,0 +1,51 @@
+<%-include("../partials/auth.ejs") %>
+      <div class="container">
+         <div class="log-box">
+            <form action="/register" method="post" autocomplete="on">
+               <legend>KassCart</legend>
+               <p>Create an access key</p>
+               <div class="label">Title</div>
+               <div class="text-input">
+                  <i class="fa fa-envelope" class="mag"></i>
+                  <input
+                     class="tusk"
+                     type="text"
+                     placeholder="Username"
+                     name="title"
+                  />
+               </div>
+               <div class="label">Email</div>
+               <div class="text-input">
+                  <i class="fa fa-envelope" class="mag"></i>
+                  <input
+                     class="tusk"
+                     type="email"
+                     placeholder="Your Work Email"
+                     name="email"
+                  />
+               </div>
+               <div class="label">Password</div>
+               <div class="text-input">
+                  <i class="fa fa-lock" class="mag"></i>
+                  <input
+                     type="password"
+                     placeholder="Password"
+                     name="passwd"
+                     class="tusk"
+                  />
+               </div>
+               <fieldset>
+                  <button type="submit" class="submit">
+                     sign in
+                  </button>
+               </fieldset>
+                <p>You can also concider these sign options</p>
+                <button class="access-google">
+                   sign in
+                </button>
+            </form>
+         </div>
+      </div>
+      <script src="JS/main.js"></script>
+   </body>
+</html>

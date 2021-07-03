@@ -1,0 +1,24 @@
+<%- include('../partials/auth.ejs') %>
+<div class="container">
+    <div class="log-box">
+        <form action="/resetPass" method="post" autocomplete="on">
+            <legend>Forgot password</legend>
+            <div class="label">Email</div>
+            <div class="text-input">
+                <i class="fa fa-envelope"></i>
+                <input type="text" placeholder="Your Work Email" name='email'>
+            </div>
+            <fieldset>
+                <button type="submit" class="submit">
+                    Continue
+                </button>
+            </fieldset>
+            <div class="nav">
+                <a href="/login"> <i class="fa fa-long-arrow-alt-left"></i> go back</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

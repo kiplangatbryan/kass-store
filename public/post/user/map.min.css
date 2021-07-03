@@ -1,0 +1,565 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Segoe UI;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-container .img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 800;
+  background: #000000b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container .img-modal .data-img {
+  width: 70vw;
+  height: 80vh;
+  position: relative;
+  z-index: 900;
+}
+
+.app-container .img-modal .data-img .close-data-img {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  top: 50%;
+  right: -10%;
+  transform: translate(10%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 0 4px 7px #00000080;
+  background: #fff;
+  color: #06665e;
+  cursor: pointer;
+}
+
+.app-container .header {
+  height: 50vh;
+  position: relative;
+}
+
+.app-container .header .menuBar {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+}
+
+.app-container .header .menuBar .nav-Bar {
+  display: flex;
+  align-items: center;
+}
+
+.app-container .header .menuBar .nav-Bar .a-tag {
+  color: #494949bd;
+  margin-right: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: bold;
+  outline: none;
+}
+
+.app-container .header .menuBar .nav-Bar .sign-btn {
+  padding: 8px 20px;
+  border-radius: 30px;
+  background: #a53232;
+}
+
+.app-container .header .menuBar .nav-Bar .dropdown {
+  position: relative;
+}
+
+.app-container .header .menuBar .nav-Bar .dropdown .user-select .fa {
+  margin-left: 8px;
+  transition: transform 0.3s;
+}
+
+.app-container .header .menuBar .nav-Bar .dropdown .user-select .drop-toggle {
+  transform: rotate(180deg);
+}
+
+.app-container .header .menuBar .nav-Bar .dropdown .smenu {
+  display: none;
+  position: absolute;
+  top: 200%;
+  right: 0;
+  width: 150px;
+  background: #fff;
+  color: #494949bd;
+}
+
+.app-container .header .menuBar .nav-Bar .dropdown .smenu .tag {
+  padding: 8px 10px;
+  margin: 0;
+  color: #3b3a3a;
+  transition: background 0.3s;
+  display: block;
+}
+
+.app-container .header .menuBar .nav-Bar .dropdown .smenu .tag:hover {
+  background: #06665e;
+  color: #ddd;
+}
+
+.app-container .header .lander {
+  background: linear-gradient(0deg, #000, transparent), url("../../img/dast.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 40vh;
+}
+
+.app-container .header .lander .banner {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  color: #eee;
+}
+
+.app-container .header .lander .banner .headText {
+  border-bottom: 2px solid #eee;
+  padding: 8px 0;
+}
+
+.app-container .header .lander .banner h1 {
+  margin-left: 5rem;
+  font-size: 40px;
+}
+
+.app-container .modal-pave {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  right: 0;
+  left: 0;
+  background: #00000066;
+  z-index: 600;
+  display: none;
+}
+
+.app-container .modal-pave .data-modal {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  width: 650px;
+  border-radius: 5px;
+  background: #fff;
+  transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 700;
+}
+
+.app-container .modal-pave .data-modal .header {
+  background: #eee;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  font-weight: bold;
+}
+
+.app-container .modal-pave .data-modal .header .close-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.app-container .modal-pave .data-modal .header .close-btn:hover {
+  background: #6d6c6c;
+}
+
+.app-container .modal-pave .data-modal .modal-body {
+  padding: 2rem 3rem;
+  display: grid;
+  grid-template-columns: 250px auto;
+  gap: 2rem;
+}
+
+.app-container .modal-pave .data-modal .modal-body .product-pic {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.app-container .modal-pave .data-modal .modal-body .product-details .divider {
+  color: #0000001a;
+  margin: 3px 0;
+}
+
+.app-container .modal-pave .data-modal .modal-body .product-details .description {
+  margin: 1rem 0;
+  font-size: 13px;
+}
+
+.app-container .modal-pave .data-modal .modal-body .product-details span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.app-container .modal-pave .data-modal .modal-body .product-details .bold {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-container .modal-pave .data-modal .modal-body .product-details .bold .count {
+  border: 2px solid #ddd;
+  margin: 1rem 0;
+  display: grid;
+  width: 120px;
+  overflow: hidden;
+  grid-template-columns: 35px auto 35px;
+  align-items: center;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.app-container .modal-pave .data-modal .modal-body .product-details .bold .count .sub,
+.app-container .modal-pave .data-modal .modal-body .product-details .bold .count .add {
+  padding: 5px 0;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+}
+
+.app-container .modal-pave .data-modal .modal-body .product-details .add-to-cart {
+  margin-top: 1rem;
+  border: none;
+  background: #06665e;
+  color: #eee;
+  padding: 8px 0;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.app-container .modal-pave .sling {
+  top: 30%;
+  transform: translate(-50%, -30%);
+}
+
+.app-container .content {
+  display: grid;
+  grid-template-columns: 300px auto;
+  padding: 2rem 3.5rem;
+}
+
+.app-container .content .category {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 5rem 0 0;
+}
+
+.app-container .content .category .category-list {
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container .content .category .category-list .title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.app-container .content .category .category-list .category-item {
+  padding: 8px 10px;
+  font-family: Roboto;
+  font-size: 14px;
+  background: #d8d8d8;
+  margin-bottom: 4px;
+  border-radius: 3px;
+  color: #06665e;
+}
+
+.app-container .content .category .category-list .category-item .bug {
+  padding: 5px 6px;
+  border-radius: 50%;
+  background: #fff;
+  font-family: "Roboto";
+  color: #a53232;
+  margin-left: 10px;
+}
+
+.app-container .content .category .search {
+  display: grid;
+  grid-template-columns: 35px auto 35px;
+  height: 35px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.app-container .content .category .search input {
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.app-container .content .category .search .search-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00000066;
+}
+
+.app-container .content .category .search .search-icons:nth-of-type(2) {
+  cursor: pointer;
+}
+
+.app-container .content .main-content {
+  padding: 0 1rem;
+}
+
+.app-container .content .main-content .intersection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.app-container .content .main-content .intersection .layout-change {
+  border: none;
+}
+
+.app-container .content .main-content .intersection .search {
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  height: 40px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+.app-container .content .main-content .intersection .search input {
+  border: none;
+  font-size: 14px;
+}
+
+.app-container .content .main-content .intersection .search .search-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00000066;
+}
+
+.app-container .content .main-content .intersection .search .search-icons:nth-of-type(2) {
+  cursor: pointer;
+}
+
+.app-container .content .main-content .intersection .pager {
+  display: flex;
+  align-items: center;
+}
+
+.app-container .content .main-content .intersection .pager .fa {
+  margin: 0 10px;
+}
+
+.app-container .content .main-content .intersection .pager .page {
+  text-decoration: none;
+  color: #3b3a3a;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.app-container .content .main-content .intersection .pager .active {
+  background: #a53232;
+  color: #eee;
+}
+
+.app-container .content .main-content .store-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.app-container .content .main-content .store-items .product {
+  margin: 0 1rem 1rem 0;
+  width: 230px;
+  overflow: hidden;
+  transition: box-shadow 0.4s;
+  border-radius: 3px;
+}
+
+.app-container .content .main-content .store-items .product:hover {
+  box-shadow: 0 4px 10px #00000066;
+}
+
+.app-container .content .main-content .store-items .product .title {
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0.5em;
+}
+
+.app-container .content .main-content .store-items .product .chart {
+  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
+  background: #ddd;
+  position: relative;
+  z-index: 20;
+}
+
+.app-container .content .main-content .store-items .product .chart .brand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3px 5px;
+  text-transform: uppercase;
+  background: #f73333;
+  font-size: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.app-container .content .main-content .store-items .product .chart-card {
+  color: #00000099;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.app-container .content .main-content .store-items .product .chart-card .cart-head {
+  display: flex;
+  align-items: stretch;
+}
+
+.app-container .content .main-content .store-items .product .chart-card .cart-head .currency {
+  font-size: 13px;
+  color: #06665e;
+}
+
+.app-container .content .main-content .store-items .product .chart-card .cart-head .stock {
+  font-size: 16px;
+  color: #a53232;
+}
+
+.app-container .content .main-content .store-items .product .chart-card .footer {
+  display: grid;
+  margin: 1em 0;
+  grid-template-columns: 50px auto;
+  height: 40px;
+}
+
+.app-container .content .main-content .store-items .product .chart-card .footer .cart-btn-add {
+  border: none;
+  background: #a53232;
+  font-size: 16px;
+  padding: 4px 6px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+  color: #eee;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-container .content .main-content .store-items .product .chart-card .footer .cart-btn-add:hover {
+  box-shadow: 0 4px 10px #0000004d;
+}
+
+.app-container .content .main-content .store-items .product .chart-card .footer .view-btn {
+  border: none;
+  display: inline;
+  color: #06665e;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.pop-up {
+  position: fixed;
+  background: #06665e;
+  bottom: 5%;
+  left: 2%;
+  padding: 0.5rem 15px;
+  color: #dddd;
+  font-weight: bold;
+  font-size: 13px;
+  animation: pop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.pop-up span {
+  color: #3b3a3a;
+}
+
+@keyframes pop {
+  0% {
+    bottom: -5%;
+  }
+  100% {
+    bottom: 5%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .app-container .content .main-content .store-items .product {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1260px) {
+  .app-container .content {
+    grid-template-columns: 300px auto;
+    padding: 2rem 2.5rem;
+  }
+  .app-container .content .main-content .intersection .search {
+    height: 35px;
+    grid-template-columns: 35px auto 35px;
+  }
+  .app-container .content .main-content .intersection .search input {
+    border: none;
+    font-size: 13px;
+  }
+  .app-container .content .main-content .store-items .product {
+    width: 170px;
+  }
+  .app-container .content .main-content .store-items .product .chart {
+    height: 120px;
+  }
+  .app-container .content .main-content .store-items .product .chart-card .cart-head h4 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  .app-container .content {
+    grid-template-columns: 250px auto;
+    padding: 2rem 2.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-container .content {
+    grid-template-columns: 230px auto;
+    padding: 2rem 2.5rem;
+  }
+}

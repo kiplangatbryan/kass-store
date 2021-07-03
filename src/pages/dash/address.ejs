@@ -1,0 +1,67 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="wrapper">
+   <%- include('../partials/dash-nav.ejs') %>
+   <div class="main-body">
+      <div class="log-box">
+         <form action="/address" method="post" autocomplete="on">
+            <legend>Update Address Information</legend>
+            <div class="push-msg"></div>
+            <div class="label">Country</div>
+            <div class="text-input">
+               <i class="fa fa-country" class="mag"></i>
+               <input
+                  data-input
+                  class="tusk"
+                  type="text"
+                  placeholder="city e.g Kenya"
+                  name="country"
+                  id="country"
+               />
+            </div>
+            <div class="label">City</div>
+            <div class="text-input">
+               <i class="fa fa-envelope" class="mag"></i>
+               <input
+                  data-input
+                  class="tusk"
+                  type="text"
+                  placeholder="city e.g Rongai"
+                  name="city"
+                  id="city"
+               />
+            </div>
+            <div class="label">Postal Code</div>
+            <div class="text-input">
+               <i class="fa fa-lock" class="mag"></i>
+               <input
+                  data-input
+                  class="tusk"
+                  type="text"
+                  placeholder="code"
+                  name="code"
+                  id="code"
+               />
+            </div>
+            <div class="label">Telephone</div>
+            <div class="text-input">
+               <i class="fa fa-lock" class="mag"></i>
+               <input
+                  data-input
+                  class="tusk"
+                  type="text"
+                  placeholder="phone number"
+                  id="phone"
+                  name="phone"
+               />
+            </div>
+            <fieldset>
+               <button type="submit" class="submit">
+                  Save Credentials
+               </button>
+            </fieldset>
+         </form>
+      </div>
+   </div>
+</div>
+<%- include('../partials/footer.ejs') %>

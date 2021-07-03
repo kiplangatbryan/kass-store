@@ -1,0 +1,90 @@
+<%- include("../partials/admin.ejs") %>
+<div class="log-box">
+   <form
+      action="/admin/add-product"
+      id="formData"
+      method="post"
+      autocomplete="on"
+      enctype="multipart/form-data"
+   >
+      <div class="label">Product Title</div>
+      <div class="text-input">
+         <i class="fa fa-envelope" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="text"
+            placeholder="city e.g Kenya"
+            name="title"
+            id="country"
+         />
+      </div>
+      <div class="label">Price</div>
+      <div class="text-input">
+         <i class="fa fa-envelope" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="text"
+            placeholder="city e.g Kenya"
+            name="price"
+            id="country"
+         />
+      </div>
+      <div class="label">Description</div>
+      <div class="text-input">
+         <i class="fa fa-envelope" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="text"
+            placeholder="city e.g Kenya"
+            name="description"
+            id="country"
+         />
+      </div>
+      <div class="label">Category</div>
+      <div class="text-input">
+         <i class="fa fa-envelope" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="text"
+            placeholder="city e.g Kenya"
+            name="Category"
+            id="country"
+         />
+      </div>
+      <div class="label">Image Url</div>
+      <div class="text-input">
+         <i class="fa fa-envelope" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="file"
+            placeholder="city e.g Kenya"
+            name="image"
+            id="country"
+         />
+      </div>
+      <div class="label">Stock Size</div>
+      <div class="text-input">
+         <i class="fa fa-envelope" class="mag"></i>
+         <input
+            data-input
+            class="tusk"
+            type="text"
+            placeholder="city e.g Kenya"
+            name="stock"
+            id="country"
+         />
+      </div>
+
+      <fieldset>
+         <button type="submit" class="submit">
+            upload
+         </button>
+      </fieldset>
+   </form>
+</div>
+<%- include("../partials/admin-foot.ejs") %>
