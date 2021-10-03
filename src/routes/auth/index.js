@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const controller = require("../../controller/store/auth");
 
 const {
   postLogin,

@@ -232,5 +232,3 @@ exports.Logout = (req, res, next) => {
   console.log("---session Destroyed---");
   res.redirect("/");
 };
-
-module.exports = router;

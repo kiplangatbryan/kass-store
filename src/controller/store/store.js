@@ -11,66 +11,17 @@ exports.index = async (req, res) => {
 
   let page = req.query.page || 1;
 
-  const ITEMS_PAR_PAGE = 6;
-  const TOTAL_PRODUCTS = await Products.find().countDocuments();
-  const products = await Products.find()
-    .skip((page - 1) * ITEMS_PAR_PAGE)
-    .limit(ITEMS_PAR_PAGE);
-
-  let groups = [];
-
-  for (let i = 0; i < products.length; i++) {
-    let index = groups.findIndex((gr) => {
-      return gr.Category === products[i].Category;
-    });
-    if (index < 0) {
-      let size = 1;
-      let temp = {
-        Category: products[i].Category,
-        size: size,
-      };
-      groups.push(temp);
-    } else {
-      groups[index].size += 1;
-    }
-  }
-  let updateProds = products.map((arr) => {
-    let dateCon = new Date(arr.createdAt).valueOf();
-    const current = new Date().valueOf();
-
-    let rem = current - dateCon;
-    const created = Math.floor(rem / 1000 / 60 / 60 / 24);
-
-    return {
-      _id: arr._id,
-      title: arr.title,
-      price: Number(arr.price)
-        .toFixed(2)
-        .replace(/\d(?=(\d{3})+\.)/g, "$&,"),
-      description: arr.description,
-      Category: arr.Category,
-      stock: arr.stock,
-      imgUrl: arr.imgUrl,
-      creation: created,
-    };
-  });
-  updateProds = updateProds.reverse();
-
-  console.log(updateProds);
+  const { products, paginationData, groups } =
+    await fetchProductsAndTheirGroupsAndPaginationDataForPage(page);
 
   return res.render("store/index", {
     path: "/",
     pageTitle: "Home | kassCart",
     isAuthentificated: req.session.isAuth,
     user: user,
-    products: updateProds,
+    products,
     Category: groups,
-    currentPage: page,
-    hasNext: ITEMS_PAR_PAGE * +page < TOTAL_PRODUCTS,
-    hasPrev: +page > 1,
-    nextPage: +page + 1,
-    prevPage: +page - 1,
-    lastPage: Math.ceil(TOTAL_PRODUCTS / ITEMS_PAR_PAGE),
+    paginationData,
   });
 };
 
@@ -80,8 +31,22 @@ exports.getStore = async (req, res) => {
     user = req.session.user;
   }
 
-  let page = req.query.page || 1;
+  let page = +req.query.page || 1;
 
+  const { products, paginationData, groups } =
+    await fetchProductsAndTheirGroupsAndPaginationDataForPage(page);
+  return res.render("store/shop", {
+    path: "/",
+    pageTitle: "Home | kassCart",
+    isAuthentificated: req.session.isAuth,
+    user: user,
+    products,
+    category: groups,
+    paginationData,
+  });
+};
+
+async function fetchProductsAndTheirGroupsAndPaginationDataForPage(page) {
   const ITEMS_PAR_PAGE = 6;
   const TOTAL_PRODUCTS = await Products.find().countDocuments();
   const products = await Products.find()
@@ -129,23 +94,22 @@ exports.getStore = async (req, res) => {
   updateProds = updateProds.reverse();
 
   // console.log(updateProds)
-  console.log(groups);
 
-  return res.render("store/shop", {
-    path: "/",
-    pageTitle: "Home | kassCart",
-    isAuthentificated: req.session.isAuth,
-    user: user,
-    products: updateProds,
-    category: groups,
-    currentPage: page,
-    hasNext: ITEMS_PAR_PAGE * +page < TOTAL_PRODUCTS,
-    hasPrev: +page > 1,
-    nextPage: +page + 1,
-    prevPage: +page - 1,
+  const paginationData = {
+    hasPreviousPage: page > 1,
+    hasNextPage: page * ITEMS_PAR_PAGE < TOTAL_PRODUCTS,
+    nextPage: page + 1,
+    previousPage: page - 1,
     lastPage: Math.ceil(TOTAL_PRODUCTS / ITEMS_PAR_PAGE),
-  });
-};
+    currentPage: page,
+  };
+
+  return {
+    products: updateProds,
+    groups,
+    paginationData,
+  };
+}
 
 exports.getCart = async (req, res) => {
   let user = "";
@@ -297,5 +261,3 @@ exports.getDashboard = (req, res) => {
     success: success,
   });
 };
-
-module.exports = router;

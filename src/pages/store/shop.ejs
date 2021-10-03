@@ -64,13 +64,39 @@
           <div class="col text-center">
             <div class="block-27">
               <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
+               
+                <!-- <li class="active"><span>1</span></li>
+                <!-- <li><a href="product">2</a></li> -->
+                <!-- <li><a href="#">3</a></li>
                 <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
+                <li><a href="#">5</a></li> --> 
+                
+                <li><a href="#">&lt;</a></li>
+                <section class="pagination">
+                  <% if (paginationData.currentPage !==1 && paginationData.previousPage !==1) { %>
+                      <li<a href="?page=1">1</a></li>
+                      <% } %>
+                          <% if (paginationData.hasPreviousPage) { %>
+                             <li> <a href="?page=<%= paginationData.previousPage %>">
+                                  <%=paginationData.previousPage %>
+                              </a></li>
+                              <% } %>
+                                 <li> <a href="?page=<%= paginationData.currentPage %>" class="active">
+                                      <%= paginationData.currentPage %>
+                                  </a><li>
+                                  <% if (paginationData.hasNextPage) { %>
+<li><a href="?page=<%= paginationData.nextPage %>">
+                                          <%= paginationData.nextPage %>
+                                      </a></li>
+                                      <% } %>
+                                          <% if (paginationData.lastPage>0 &&paginationData.lastPage !==paginationData.currentPage && paginationData.nextPage
+                                              !==paginationData.lastPage) { %>
+                                              <li></li><a href="?page=<%= paginationData.lastPage %>">
+                                                  <%= paginationData.lastPage %>
+                                              </a></li>
+                                              <% } %>
+              </section>
+              <li><a href="#">&gt;</a></li>
               </ul>
             </div>
           </div>
